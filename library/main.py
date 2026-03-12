@@ -20,3 +20,6 @@ admin = Librarian(0, "Admin")
 print(admin)
 admin.lendBooks(mimi, [902, 903, 904])
 print(mimi.books)
+
+# lend books to read
+# print each users' reading books
