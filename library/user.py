@@ -1,8 +1,18 @@
 from library.book import Book
 
 
+class ExceptionMaxBooks(Exception):
+    def __init__(self):
+        super().__init__("Max books borrowed")
+
+class InvalidID(Exception):
+    def __init__(self):
+        super().__init__("Invalid ID provided")
+
 class User:
     def __init__(self, uID: int, name: str, group: int):
+        if len(str(uID)) > 4:
+            raise InvalidID()
         self._uID = uID
         self._name = name
         self._group = group
@@ -38,7 +48,8 @@ class User:
 
         if len(self.books) >= 3:
             # raise Exception('!!', self.uID, 'Failed to borrow', book.bID, ', can only borrow 3 books at a time. !!')
-            raise Exception(f"!! {self.uID} Failed to borrow {book.bID}, can only borrow 3 books at a time. !!")
+            # raise Exception(f"!! {self.uID} Failed to borrow {book.bID}, can only borrow 3 books at a time. !!")
+            raise ExceptionMaxBooks()
 
         self.books.append(book)
         print("**", self.uID, "Successfully borrowed", book.bID, "**")
@@ -58,3 +69,4 @@ class User:
         print("\t", self.uID, self.name, "borrowed:", end="\n|\t")
         for book in self.books:
             print(book.bID, "->", book.name, end="\t|\t")
+        print()

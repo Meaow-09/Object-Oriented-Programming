@@ -36,6 +36,11 @@ tryBorrowBook(mimi, bd)
 
 mimi.showBooks()
 
+try:
+    me = User(10011, "me", 1)
+except Exception as err:
+    print(err)
+
 # admin = Librarian(0, "Admin")
 # print(admin)
 # admin.lendBooks(mimi, [902, 903, 904])
