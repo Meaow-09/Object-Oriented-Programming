@@ -1,17 +1,22 @@
+from library.book import Book
 from library.lending import Lending
 
+class DuplicateBookException(Exception):
+    def __init__(self):
+        super().__init__("Book already exists")
 
 class LibrarySystem:
     def __init__(self):
-        self.books = []
+        self.books = {'bID': None, 'name': None}
         self.members = []
         self.lendings = []
 
-    def add_book(self, book):
-        if book in self.books:
-            print("Book already added")
-        else:
-            self.books.append(book)
+    def add_book(self, book: Book):
+        try:
+            tempval = self.books[book.bID]
+            raise DuplicateBookException
+        except KeyError:
+            self.books[book.bID] = book.name
 
     def add_member(self, member):
         self.members.append(member)
