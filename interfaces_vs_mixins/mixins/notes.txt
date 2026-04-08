@@ -1,0 +1,6 @@
+
+| With Mixins     | Without Mixins   |
+| --------------- | ---------------- |
+| Reusable code   | Duplicate code   |
+| Clean & modular | Repeated logic   |
+| Easy to extend  | Hard to maintain |

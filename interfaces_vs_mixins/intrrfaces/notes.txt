@@ -1,0 +1,13 @@
+
+With interfaces we can achieve:
+    Enforce structure
+    Enable polymorphism
+    Make code flexible and scalable
+
+
+| Feature         | Interface              | Mixin             |
+| --------------- | ---------------------- | ----------------- |
+| Purpose         | Define rules           | Add functionality |
+| Contains logic? | ❌ No (mostly abstract)| ✅ Yes            |
+| Use case        | Structure & contracts  | Code reuse        |
+| Example         | NotificationService    | LoggerMixin       |
