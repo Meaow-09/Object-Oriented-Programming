@@ -1,0 +1,9 @@
+
+** Key Difference of Class & Static methods
+
+| Feature           | Class Method 🟢      | Static Method 🔵     |
+| ----------------- | -------------------- | -------------------- |
+| Uses `cls`        | ✅ Yes                | ❌ No               |
+| Uses `self`       | ❌ No                 | ❌ No               |
+| Access class data | ✅ Yes                | ❌ No               |
+| Purpose           | Work with class data | Utility/helper logic |
